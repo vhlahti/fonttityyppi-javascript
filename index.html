@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonttityypin muuttaminen JavaScriptin avulla</title>
+    <script type="text/javascript" src="./scripts/fonttityyppi.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+</head>
+<body>
+    <section id="block">
+    <h1 id="main-header">Muuta fonttityyppiä JavaScriptillä</h1>
+    <p>Huom! Kaikki muutokset tapahtuvat JavaScriptin avulla.<br><br>
+        Listan fonttityyppiä vaihdetaan alla olevaa nappia painamalla.<br>
+        Listan oletusfontti on "Courier New", fonttikoko 16px.<br><br>
+        <span id="italic">Mutta mitä tapahtuu, jos painat nappia 10 kertaa?</span>
+    </p>
+    <h2 id="list-header">Tämän listan fonttityyppi muuttuu napista painamalla</h2>
+    <ol id="myList">
+        <li>Ensimmäinen napin painallus muuttaa fonttityypiksi "Roboto"</li>
+        <li>Toinen napin painallus muuttaa fonttityypiksi "Mansalva"</li>
+        <li>Kolmas napin painallus muuttaa fonttityypiksi "Grenze"</li>
+        <li>Neljäs napin painallus muuttaa fonttityypiksi "Ubuntu"</li>
+        <li>Viides napin painallus palauttaa fonttityypin "Courier New"</li>
+    </ol>
+    <footer>
+        <button id="button" onclick="fonttiTyyppi()">Muuta fontti</button>
+        <p id="display">Fontti on nyt: "Courier New"</p>
+        </footer>
+    </section>
+<script>
+    document.body.style.backgroundColor = "white";
+    document.getElementById("main-header").style.fontSize = "36px";
+    document.getElementById("italic").style.fontStyle = "italic";
+    document.getElementById("list-header").style.fontSize = "28px";
+    document.getElementById("myList").style.fontSize = "16px";
+    document.getElementById("myList").style.fontFamily = 'monospace';
+    document.getElementById("block").style.fontFamily = "Courier New";
+    document.getElementById("block").style.backgroundColor = "#F2EFEF";
+    document.getElementById("block").style.width = "900px";
+    document.getElementById("block").style.borderRadius = "10px"
+    document.getElementById("block").style.padding = "1rem"
+    document.getElementById("button").style.backgroundColor = "#483C8A";
+    document.getElementById("button").style.color = "white";
+    document.getElementById("button").style.fontSize = "18px";
+    document.getElementById("button").style.width = "130px";
+    document.getElementById("button").style.padding = "1rem 0.5rem 1rem 0.5rem";
+    document.getElementById("button").style.borderRadius = "5px";
+    document.getElementById("display").style.fontSize = "16px";
+
+    WebFont.load({
+	google: {
+		families: ['Roboto', 'Mansalva', 'Grenze', 'Ubuntu']
+	}
+    });
+</script>
+</body>
+</html>
